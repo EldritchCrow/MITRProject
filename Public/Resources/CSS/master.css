@@ -56,4 +56,16 @@ a, a:hover, a:focus {
 }
 #content{
     padding-left: 250px;
+    width: 100%;
+}
+.docImg{
+    height: 200px;
+    width: 160px;
+    padding-left: 35px;
+}
+.docDiv p{
+    font-size: 20px;
+}
+#recentContent{
+    border-bottom: 1px solid black;
 }
