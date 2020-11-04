@@ -1,3 +1,10 @@
-h1{
-    Color: red;
+#sideNav{
+    padding-right: 0px;
+    border-right: 0px;
+    margin-right: 0px;
+}
+#recentContent{
+    padding-left: 0px;
+    border-left: 0px;
+    margin-left: 0px;
 }
