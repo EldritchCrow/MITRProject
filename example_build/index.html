@@ -22,5 +22,11 @@
       <script>
          document.write(__dirname);
       </script>
+      <br>
+      <script>
+         const { hello } = require(path.join(__dirname, "api.js"));
+         var x = hello();
+         document.write(JSON.stringify(x));
+      </script>
    </body>
 </html>
