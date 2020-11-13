@@ -3,6 +3,8 @@
    <head>
       <meta charset = "UTF-8">
       <title>Hello World!</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="./browser.js"></script>
    </head>
    
    <body>
@@ -10,6 +12,15 @@
       We are using node <script>document.write(process.versions.node)</script>,
       Chrome <script>document.write(process.versions.chrome)</script>,
       and Electron <script>document.write(process.versions.electron)</script>.
-      <script>document.write(process.versions)</script>
+      <br>
+      <script>
+         const fs = require("fs");
+         const path = require('path');
+         document.write(fs.readFileSync(path.join(__dirname, 'dummy.txt')));
+      </script>
+      <br>
+      <script>
+         document.write(__dirname);
+      </script>
    </body>
 </html>
