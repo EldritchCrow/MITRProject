@@ -1,0 +1,23 @@
+{
+  "name": "mitrproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "example_build/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EldritchCrow/MITRProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EldritchCrow/MITRProject/issues"
+  },
+  "homepage": "https://github.com/EldritchCrow/MITRProject#readme",
+  "devDependencies": {
+    "electron": "^10.1.5",
+    "electron-packager": "^15.1.0"
+  }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "UTF-8">
+      <title>Hello World!</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="./browser.js"></script>
+   </head>
+   
+   <body>
+      <h1>Hello World!</h1>
+      We are using node <script>document.write(process.versions.node)</script>,
+      Chrome <script>document.write(process.versions.chrome)</script>,
+      and Electron <script>document.write(process.versions.electron)</script>.
+      <br>
+      <script>
+         const fs = require("fs");
+         const path = require('path');
+         document.write(fs.readFileSync(path.join(__dirname, 'dummy.txt')));
+      </script>
+      <br>
+      <script>
+         document.write(__dirname);
+      </script>
+      <br>
+      <script>
+         const { hello } = require(path.join(__dirname, "api.js"));
+         var x = hello();
+         document.write(JSON.stringify(x));
+      </script>
+   </body>
+</html>
