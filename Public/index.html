@@ -51,12 +51,22 @@
                <p>Recent Document 6</p>
             </div>
          </div>
+         <div id="events"></div>
          <script>
-            var x = CustomerName();
-            x.Customer.forEach( (i) =>{
-               document.write(i.fName + " " + i.lName);
+            var x = EventName();
+            var y = DateofReservation();
+            var container = document.getElementById("events");
+            var counter = 1;
+            x.partyName.forEach( (i) =>{
+               container.innerHTML+='<div class="wholeEvent" id="event'+ counter +'">' + '<div class="eventName">' + i.name + '</div>' + '</div>';
+               counter++;
             });
-            
+            counter = 1;
+            y.Date.forEach( (i) =>{
+               var temp = document.getElementById("event" + counter);
+               temp.innerHTML+='<div class="date">' + i.date + '</div>';
+               counter++;
+            });
          </script>
       </div>
    </div>

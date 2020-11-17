@@ -17,3 +17,47 @@ function CustomerName() {
     ]
     };
 }
+function DateofReservation() {
+    //I want same to give me the names of the customers as a string 
+    return {
+        Date: [
+            {
+                date: "11/17/2020",
+            },
+            {
+                date: "4/20/2021",
+            },
+            {
+                date: "12/25/2020",
+            },
+            {
+                date: "Forever",
+            },
+            {
+                date: "1/8/2021",
+            }
+    ]
+    };
+}
+function EventName() {
+    //I want same to give me the names of the customers as a string 
+    return {
+        partyName: [
+            {
+                name: "John's Bender",
+            },
+            {
+                name: "Anna's A fucking bitch",
+            },
+            {
+                name: "Sam's Dungeons and Dragons Party",
+            },
+            {
+                name: "Andrew's time to sit alone",
+            },
+            {
+                name: "Steve's Brothel",
+            }
+    ]
+    };
+}
