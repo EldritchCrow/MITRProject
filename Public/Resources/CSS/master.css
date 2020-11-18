@@ -69,3 +69,47 @@ a, a:hover, a:focus {
 #recentContent{
     border-bottom: 1px solid black;
 }
+
+.topnav {
+  overflow: hidden;
+  background-color:   #E8E8E8;
+  margin-bottom: 10px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  float: right;
+  padding: 10px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  font-size: 17px;
+}
+
+.search {
+  padding-bottom: 5px: 
+}
