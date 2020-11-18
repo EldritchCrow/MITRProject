@@ -18,7 +18,7 @@ function CustomerName() {
     };
 }
 function DateofReservation() {
-    //I want same to give me the names of the customers as a string 
+    //This will be the day of the event 
     return {
         Date: [
             {
@@ -40,7 +40,7 @@ function DateofReservation() {
     };
 }
 function EventName() {
-    //I want same to give me the names of the customers as a string 
+    //This will be the Event name, it will be what the event is referred to as  
     return {
         partyName: [
             {
@@ -57,6 +57,48 @@ function EventName() {
             },
             {
                 name: "Steve's Brothel",
+            }
+    ]
+    };
+}
+function EventLocation() {
+    //This will be Location of the Event
+    return {
+        Location: [
+            {
+                location: "Under a bridge",
+            },
+            {
+                location: "Over There",
+            },
+            {
+                location: "The Crawl Space",
+            },
+            {
+                location: "Somewhere over the rainbow",
+            },
+            {
+                location: "Burger King",
+            }
+    ]
+    };
+}
+function NumberOfGuards() {
+    //Number of guards for the event, I couldn't find it in the API, but let me know if you can
+    return {
+        Guards: [
+            {
+                guards: "2",
+            }
+    ]
+    };
+}
+function NumberOfCustodians() {
+    //Number of guards for the event, I couldn't find it in the API, but let me know if you can
+    return {
+        Custodians: [
+            {
+                Custodians: "1",
             }
     ]
     };
