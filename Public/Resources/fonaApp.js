@@ -84,7 +84,7 @@ function EventLocation() {
     };
 }
 function NumberOfGuards() {
-    //Number of guards for the event, I couldn't find it in the API, but let me know if you can
+    //NOT ON API
     return {
         Guards: [
             {
@@ -94,12 +94,73 @@ function NumberOfGuards() {
     };
 }
 function NumberOfCustodians() {
-    //Number of guards for the event, I couldn't find it in the API, but let me know if you can
+    //NOT ON API
     return {
         Custodians: [
             {
-                Custodians: "1",
+                custodians: "1",
             }
     ]
     };
+}
+function HoursofCustodians() {
+    //NOT ON API
+    return {
+        Custodians: [
+            {
+                custodians: "1",
+            }
+    ]
+    };
+}
+function HoursofGuards() {
+    //NOT ON API
+    return {
+        Guards: [
+            {
+                guards: "1",
+            }
+    ]
+    };
+}
+function GetContract() {
+    //This function will have the contract, I checked out the api and it mentioned something about 50 per page, Idk if there is only one for each thing or not
+    //if there are multiple contracts we'll need to figure out how to implement that
+    return{
+        Contract: [
+            {
+                contract: "Contract",
+            }
+        ]
+    }
+}
+function rentalFee(){
+    //This will have the fee for the rental of the space
+    return{
+        RentalFee: [
+            {
+                fee: "$1000",
+            }
+        ]
+    }
+}
+function SecurityFee(){
+    //This will have the fee for the Security of the space
+    return{
+        SecurityFee: [
+            {
+                fee: "$1000",
+            }
+        ]
+    }
+}
+function CleaningFee(){
+    //This will have the fee for the Cleaning of the space
+    return{
+        CleaningFee: [
+            {
+                fee: "$1000",
+            }
+        ]
+    }
 }
