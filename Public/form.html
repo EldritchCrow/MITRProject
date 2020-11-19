@@ -28,17 +28,18 @@
 		  </a>
     </div>
     <div class="container">
-   		<div class="split left" id="tripleSeatInfo">
-  			<div class="centered">
-    			<h2>Triple Seat Pull</h2>
-        </div>
-        <script>
-          var event = EventName();
-          var customer = CustomerName();
-          var date = DateofReservation();
-          var container = document.getElementById("tripleSeatInfo");
-        </script>
-		</div>
+      <div class="split left" id="tripleSeatInfo">
+        <div id="formDateHolder"></div>
+       <script>
+         var event = EventName();
+         var customer = CustomerName();
+         var date = DateofReservation();
+         var container = document.getElementById("tripleSeatInfo");
+         var dateContainer = document.getElementById("formDateHolder");
+         container.innerHTML+='<div id="formEventName">'+ event.partyName[0].name +'</div>';
+         container.innerHTML+='<div id="formEventDate">Date of Event: '+ date.Date[0].date +'</div>';
+       </script>
+   </div>
 		<div class="split right">
             <div class="fill">
                 <img src="Resources/tripleSeatContract.png" alt="Contract Display" />
