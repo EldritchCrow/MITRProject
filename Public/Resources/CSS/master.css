@@ -118,6 +118,7 @@ h2 {
 #events {
     position: center;
 }
+
 .wholeEvent {
     display: inline-block;
     margin: 10px;
@@ -126,6 +127,16 @@ h2 {
     height: 110px;
     text-align: center;
     padding-top: 15px;
+}
+
+.wholeEventLITE {
+    display: inline-block;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 200px;
+    text-align: center;
+    padding-top: 50px;
 }
 
 .date {
