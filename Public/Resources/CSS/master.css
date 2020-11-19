@@ -113,3 +113,19 @@ a, a:hover, a:focus {
 .search {
   padding-bottom: 5px: 
 }
+
+.wholeEvent {
+    margin: 10px;
+    border: 1px solid black;
+    height: 100px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.date {
+    padding-top: 15px;
+}
+
+.col-sm-2 {
+
+}
