@@ -25,7 +25,7 @@ function DateofReservation() {
                 date: "11/17/2020",
             },
             {
-                date: "4/20/2021",
+                date: "4/15/2021",
             },
             {
                 date: "12/25/2020",
@@ -40,7 +40,7 @@ function DateofReservation() {
                 date: "11/17/2020",
             },
             {
-                date: "4/20/2021",
+                date: "4/15/2021",
             },
             {
                 date: "12/25/2020",
@@ -55,7 +55,7 @@ function DateofReservation() {
                 date: "11/17/2020",
             },
             {
-                date: "4/20/2021",
+                date: "4/15/2021",
             },
             {
                 date: "12/25/2020",
@@ -70,7 +70,7 @@ function DateofReservation() {
                 date: "11/17/2020",
             },
             {
-                date: "4/20/2021",
+                date: "4/15/2021",
             },
             {
                 date: "12/25/2020",
