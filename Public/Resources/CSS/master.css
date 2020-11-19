@@ -134,3 +134,10 @@ h2 {
 .col-sm-2 {
 
 }
+
+.circle {
+  height: 5px;
+  width: 5px;
+  background-color: #90EE90;
+  border-radius: 50%;
+}
