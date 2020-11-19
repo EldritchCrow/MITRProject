@@ -28,11 +28,16 @@
 		  </a>
     </div>
     <div class="container">
-   		<div class="split left">
+   		<div class="split left" id="tripleSeatInfo">
   			<div class="centered">
     			<h2>Triple Seat Pull</h2>
-    			<p>Some text.</p>
-  			</div>
+        </div>
+        <script>
+          var event = EventName();
+          var customer = CustomerName();
+          var date = DateofReservation();
+          var container = document.getElementById("tripleSeatInfo");
+        </script>
 		</div>
 		<div class="split right">
   			<div class="centered">

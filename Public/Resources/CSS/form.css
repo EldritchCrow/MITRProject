@@ -19,7 +19,7 @@ a, a:hover, a:focus {
     align-items: stretch;
 }
 #sidebar{
-    width: 200px;
+    width: 12%;
     position: fixed;
     height: 100vh;
     top: 0;
@@ -79,12 +79,13 @@ a, a:hover, a:focus {
 
 /* Style the search box inside the navigation bar */
 .topnav input[type=text] {
+  width: 205px;
   float: right;
   padding: 10px;
   border: none;
   margin-top: 10px;
   margin-bottom: 5px;
-  margin-right: 5px;
+  margin-right: 15px;
   font-size: 17px;
 }
 
@@ -94,7 +95,7 @@ a, a:hover, a:focus {
 
 .split {
   height: 100%;
-  width: 50%;
+  width: 44%;
   position: fixed;
   z-index: 1;
   top: 20;
@@ -109,7 +110,7 @@ a, a:hover, a:focus {
   border-top-color: black 10px;
   border-right-color: black 2px;
   background: #faf3dc;
-
+  margin-left: 12%;
 }
 
 /* Control the right side */
