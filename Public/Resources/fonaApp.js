@@ -31,7 +31,7 @@ function DateofReservation() {
                 date: "12/25/2020",
             },
             {
-                date: "Forever",
+                date: "12/11/2020",
             },
             {
                 date: "1/8/2021",
@@ -44,19 +44,19 @@ function EventName() {
     return {
         partyName: [
             {
-                name: "John's Bender",
+                name: "John and Samantha's Wedding",
             },
             {
-                name: "Anna's A fucking bitch",
+                name: "Anna's Birthday Party",
             },
             {
-                name: "Sam's Dungeons and Dragons Party",
+                name: "Billy's Christmas Party",
             },
             {
-                name: "Andrew's time to sit alone",
+                name: "Eric and Jenna's Wedding",
             },
             {
-                name: "Steve's Brothel",
+                name: "Steve and Karen's Wedding",
             }
     ]
     };
@@ -66,19 +66,19 @@ function EventLocation() {
     return {
         Location: [
             {
-                location: "Under a bridge",
+                location: "The Pond",
             },
             {
-                location: "Over There",
+                location: "The Veranda",
             },
             {
-                location: "The Crawl Space",
+                location: "The Ball Room",
             },
             {
-                location: "Somewhere over the rainbow",
+                location: "The Veranda",
             },
             {
-                location: "Burger King",
+                location: "The Pond",
             }
     ]
     };
