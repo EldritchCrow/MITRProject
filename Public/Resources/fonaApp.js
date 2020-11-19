@@ -35,6 +35,51 @@ function DateofReservation() {
             },
             {
                 date: "1/8/2021",
+            },
+            {
+                date: "11/17/2020",
+            },
+            {
+                date: "4/20/2021",
+            },
+            {
+                date: "12/25/2020",
+            },
+            {
+                date: "12/11/2020",
+            },
+            {
+                date: "1/8/2021",
+            },
+            {
+                date: "11/17/2020",
+            },
+            {
+                date: "4/20/2021",
+            },
+            {
+                date: "12/25/2020",
+            },
+            {
+                date: "12/11/2020",
+            },
+            {
+                date: "1/8/2021",
+            },
+            {
+                date: "11/17/2020",
+            },
+            {
+                date: "4/20/2021",
+            },
+            {
+                date: "12/25/2020",
+            },
+            {
+                date: "12/11/2020",
+            },
+            {
+                date: "1/8/2021",
             }
     ]
     };
@@ -57,6 +102,51 @@ function EventName() {
             },
             {
                 name: "Steve and Karen's Wedding",
+            },
+            {
+                name: "John and Samantha's Wedding",
+            },
+            {
+                name: "Anna's Birthday Party",
+            },
+            {
+                name: "Billy's Christmas Party",
+            },
+            {
+                name: "Eric and Jenna's Wedding",
+            },
+            {
+                name: "Steve and Karen's Wedding",
+            },
+            {
+                name: "John and Samantha's Wedding",
+            },
+            {
+                name: "Anna's Birthday Party",
+            },
+            {
+                name: "Billy's Christmas Party",
+            },
+            {
+                name: "Eric and Jenna's Wedding",
+            },
+            {
+                name: "Steve and Karen's Wedding",
+            },
+            {
+                name: "John and Samantha's Wedding",
+            },
+            {
+                name: "Anna's Birthday Party",
+            },
+            {
+                name: "Billy's Christmas Party",
+            },
+            {
+                name: "Eric and Jenna's Wedding",
+            },
+            {
+                name: "Steve and Karen's Wedding",
             }
     ]
     };
@@ -65,6 +155,51 @@ function EventLocation() {
     //This will be Location of the Event
     return {
         Location: [
+            {
+                location: "The Pond",
+            },
+            {
+                location: "The Veranda",
+            },
+            {
+                location: "The Ball Room",
+            },
+            {
+                location: "The Veranda",
+            },
+            {
+                location: "The Pond",
+            },
+            {
+                location: "The Pond",
+            },
+            {
+                location: "The Veranda",
+            },
+            {
+                location: "The Ball Room",
+            },
+            {
+                location: "The Veranda",
+            },
+            {
+                location: "The Pond",
+            },
+            {
+                location: "The Pond",
+            },
+            {
+                location: "The Veranda",
+            },
+            {
+                location: "The Ball Room",
+            },
+            {
+                location: "The Veranda",
+            },
+            {
+                location: "The Pond",
+            },
             {
                 location: "The Pond",
             },
