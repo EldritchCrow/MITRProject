@@ -114,6 +114,9 @@ a, a:hover, a:focus {
   padding-bottom: 5px: 
 }
 
+#events {
+    position: center;
+}
 .wholeEvent {
     display: inline-block;
     margin: 10px;
