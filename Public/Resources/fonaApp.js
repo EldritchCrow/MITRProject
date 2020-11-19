@@ -89,7 +89,7 @@ function EventName() {
     return {
         partyName: [
             {
-                name: "John and Samantha's Wedding",
+                name: "John and Sam's Wedding",
             },
             {
                 name: "Anna's Birthday Party",
