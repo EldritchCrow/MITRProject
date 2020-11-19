@@ -152,15 +152,7 @@ a, a:hover, a:focus {
     font-size: xx-large;
     text-decoration: underline;
 }
-#formCustomerName {
-    padding: 20px;
-}
-#formEventLocation {
-    padding: 20px;
-}
-#formEventDate{
-    padding: 20px;
-}
+
 #tripleSeatInfo img {
     padding: 15px;
     max-width: 300px;
@@ -168,5 +160,16 @@ a, a:hover, a:focus {
     position: absolute;
 
 }
+.formData {
+    padding: 15px;
+}
 
+#fees {
+    background: white;
+    width: max-content;
+    border-bottom-style: solid;
+}
+#fees .formData {
+    padding: 10px;
+}
 
