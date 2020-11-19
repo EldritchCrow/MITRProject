@@ -144,3 +144,29 @@ a, a:hover, a:focus {
     min-height: 100%
 }
 
+/* styling for left side text */
+#tripleSeatInfo {
+    padding-left: 20px ;
+}
+#formEventName {
+    font-size: xx-large;
+    text-decoration: underline;
+}
+#formCustomerName {
+    padding: 20px;
+}
+#formEventLocation {
+    padding: 20px;
+}
+#formEventDate{
+    padding: 20px;
+}
+#tripleSeatInfo img {
+    padding: 15px;
+    max-width: 300px;
+    max-height: 300px;
+    position: absolute;
+
+}
+
+
