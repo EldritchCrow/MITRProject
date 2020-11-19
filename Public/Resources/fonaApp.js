@@ -104,7 +104,7 @@ function EventName() {
                 name: "Steve and Karen's Wedding",
             },
             {
-                name: "John and Samantha's Wedding",
+                name: "John and Sam's Wedding",
             },
             {
                 name: "Anna's Birthday Party",
@@ -119,7 +119,7 @@ function EventName() {
                 name: "Steve and Karen's Wedding",
             },
             {
-                name: "John and Samantha's Wedding",
+                name: "John and Sam's Wedding",
             },
             {
                 name: "Anna's Birthday Party",
@@ -134,7 +134,7 @@ function EventName() {
                 name: "Steve and Karen's Wedding",
             },
             {
-                name: "John and Samantha's Wedding",
+                name: "John and Sam's Wedding",
             },
             {
                 name: "Anna's Birthday Party",
