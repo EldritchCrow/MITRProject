@@ -31,22 +31,50 @@
       <div class="split left" id="tripleSeatInfo">
         <div id="formEventNameHolder"></div>
         <div class="formData" id="formCustomerNameHolder"></div>
+        <div class="formData" id="formCustomerNameHolder2">Second Customer Name: Samantha Jones</div>
         <div class="formData" id="formDateHolder"></div>
         <div class="formData" id="formLocationHolder"></div>
+        <div class="formData" id="formDinner">Event Dinner: Steak and Potatoes</div>
+        <div class="formData" id="formDrinks">Event Drinks: Cocktails</div>
         <div class="formData" id="formNumberOfGuardsHolder"></div>
+        <div class="formData" id="formHoursOfGuardsHolder">Guards Hours: 6PM-11PM</div>
+        <div class="formData" id="formNumberOfCustodiansHolder"></div>
+        <div class="formData" id="formHoursOfCustodiansHolder">Custodian Hours: 7PM-12AM</div>
+        <div class="formData" id="formRentalFeeHolder"></div>
+        <div class="formData" id="formCleaningFeeHolder"></div>
+        <div class="formData" id="formSecurityFeeHolder"></div>
+        <div class="formData" id="formsecurityDepositHolder"></div>
         <script>
           var event = EventName();
           var customer = CustomerName();
           var date = DateofReservation();
           var locationOfEvent = EventLocation();
+          var numberOfGuardsEvent = NumberOfGuards();
+          var numberOfCustodiansEvent = NumberOfCustodians();
+          var rentalFeeEvent = rentalFee();
+          var cleaningFeeEvent = CleaningFee();
+          var securityFeeEvent = SecurityFee();
+          var securityDepositEvent = SecurityDeposit();
           var container = document.getElementById("formEventNameHolder");
           container.innerHTML+='<div id="formEventName">'+ event.partyName[0].name +'</div>';
           container = document.getElementById("formCustomerNameHolder");
           container.innerHTML+='<div id="formCustomerName">Customer Name: '+ customer.Customer[0].fName + ' ' + customer.Customer[0].lName +'</div>';
-          container = document.getElementById("formDateHolder");
+          container = document.getElementById("formLocationHolder");
           container.innerHTML+='<div id="formEventLocation">Location of Event: '+ locationOfEvent.Location[0].location +'</div>';
           container = document.getElementById("formDateHolder");
           container.innerHTML+='<div id="formEventDate">Date of Event: '+ date.Date[0].date +'</div>';
+          container = document.getElementById("formNumberOfGuardsHolder");
+          container.innerHTML+='<div id="formEventNumberOfGuards">Number of Guards: '+ numberOfGuardsEvent.Guards[0].guards +'</div>';
+          container = document.getElementById("formNumberOfCustodiansHolder");
+          container.innerHTML+='<div id="formEventNumberOfCustodians">Number of custodians: '+ numberOfCustodiansEvent.Custodians[0].custodians +'</div>';
+          container = document.getElementById("formRentalFeeHolder");
+          container.innerHTML+='<div id="formEventRentalFee">Rental Fee: '+ rentalFeeEvent.RentalFee[0].fee +'</div>';
+          container = document.getElementById("formCleaningFeeHolder");
+          container.innerHTML+='<div id="formEventCleaningFee">Cleaning Fee: '+ cleaningFeeEvent.CleaningFee[0].fee +'</div>';
+          container = document.getElementById("formSecurityFeeHolder");
+          container.innerHTML+='<div id="formEventSecurityFee">Security Fee: '+ securityFeeEvent.SecurityFee[0].fee +'</div>';
+          container = document.getElementById("formsecurityDepositHolder");
+          container.innerHTML+='<div id="formEventsecurityDeposit">Security Deposit: '+ securityDepositEvent.SecurityDeposit[0].fee +'</div>';
         </script>
    </div>
 		<div class="split right">

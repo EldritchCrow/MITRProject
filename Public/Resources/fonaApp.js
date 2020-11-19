@@ -289,6 +289,16 @@ function SecurityFee(){
         ]
     }
 }
+function SecurityDeposit(){
+    //This will have the fee for the Security of the space
+    return{
+        SecurityDeposit: [
+            {
+                fee: "$1000",
+            }
+        ]
+    }
+}
 function CleaningFee(){
     //This will have the fee for the Cleaning of the space
     return{
