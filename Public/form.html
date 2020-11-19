@@ -29,16 +29,25 @@
     </div>
     <div class="container">
       <div class="split left" id="tripleSeatInfo">
+        <div id="formEventNameHolder"></div>
+        <div id="formCustomerNameHolder"></div>
         <div id="formDateHolder"></div>
-       <script>
-         var event = EventName();
-         var customer = CustomerName();
-         var date = DateofReservation();
-         var container = document.getElementById("tripleSeatInfo");
-         var dateContainer = document.getElementById("formDateHolder");
-         container.innerHTML+='<div id="formEventName">'+ event.partyName[0].name +'</div>';
-         container.innerHTML+='<div id="formEventDate">Date of Event: '+ date.Date[0].date +'</div>';
-       </script>
+        <div id="formLocationHolder"></div>
+        <div id="formNumberOfGuardsHolder"></div>
+        <script>
+          var event = EventName();
+          var customer = CustomerName();
+          var date = DateofReservation();
+          var locationOfEvent = EventLocation();
+          var container = document.getElementById("formEventNameHolder");
+          container.innerHTML+='<div id="formEventName">'+ event.partyName[0].name +'</div>';
+          container = document.getElementById("formCustomerNameHolder");
+          container.innerHTML+='<div id="formCustomerName">Customer Name: '+ customer.Customer[0].fName + ' ' + customer.Customer[0].lName +'</div>';
+          container = document.getElementById("formDateHolder");
+          container.innerHTML+='<div id="formEventLocation">Location of Event: '+ locationOfEvent.Location[0].location +'</div>';
+          container = document.getElementById("formDateHolder");
+          container.innerHTML+='<div id="formEventDate">Date of Event: '+ date.Date[0].date +'</div>';
+        </script>
    </div>
 		<div class="split right">
             <div class="fill">
