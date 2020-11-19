@@ -121,6 +121,7 @@ h2 {
 .wholeEvent {
     display: inline-block;
     margin: 10px;
+    border-radius: 10px;
     border: 1px solid black;
     height: 110px;
     text-align: center;
@@ -136,8 +137,8 @@ h2 {
 }
 
 .circle {
-  height: 5px;
-  width: 5px;
+  height: 8px;
+  width: 8px;
   background-color: #90EE90;
   border-radius: 50%;
 }
