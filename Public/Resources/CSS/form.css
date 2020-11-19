@@ -19,34 +19,35 @@ a, a:hover, a:focus {
     align-items: stretch;
 }
 #sidebar{
-    width: 12%;
-    position: fixed;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    color: #fafafa;
-    background: #ee9bac;
+  width: 12%;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  color: #fafafa;
+  background: #ee9bac;
 }
 #sidebar ul{
-    list-style-type: none;
+  padding-top: 60px;
+  list-style-type: none;
 }
 #sidebar ul p {
-    color: #fafafa;
-    padding: 10px;
+  color: #fafafa;
+  padding: 10px;
 }
 #sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #ee9bac;
+  padding: 20px 0;
+  border-bottom: 1px solid #ee9bac;
 }
 #sidebar ul li a:hover {
-    color: #ee9bac;
-    background: #fafafa;
+  color: #ee9bac;
+  background: #fafafa;
 }
 #sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
+  padding: 10px;
+  font-size: 1.2em;
+  display: block;
 }
 
 .topnav {
@@ -100,7 +101,7 @@ a, a:hover, a:focus {
   z-index: 1;
   top: 20;
   overflow-x: hidden;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 /* Control the left side */
