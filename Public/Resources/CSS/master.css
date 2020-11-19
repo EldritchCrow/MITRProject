@@ -115,9 +115,10 @@ a, a:hover, a:focus {
 }
 
 .wholeEvent {
+    display: inline-block;
     margin: 10px;
     border: 1px solid black;
-    height: 100px;
+    height: 110px;
     text-align: center;
     padding-top: 15px;
 }
