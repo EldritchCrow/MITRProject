@@ -154,23 +154,38 @@ a, a:hover, a:focus {
     text-decoration: underline;
 }
 
-#tripleSeatInfo img {
-    padding: 15px;
-    max-width: 300px;
-    max-height: 300px;
-    position: absolute;
-
-}
 .formData {
-    padding: 15px;
-}
-
-#fees {
-    background: white;
-    width: max-content;
-    border-bottom-style: solid;
-}
-#fees .formData {
     padding: 10px;
 }
+
+/* box for fee info */
+#fees {
+    overflow: hidden;
+    margin-left: 10px;
+    padding: 5px;
+    background: white;
+    width: 40%;
+}
+#fees .formData {
+    padding: 3px;
+}
+
+/* box for worker info */
+#workInfo {
+    float: left;
+    margin-left: 10px;
+    padding: 5px;
+    background: white;
+    width: 40%;
+}
+#workInfo .formData {
+    padding: 3px;
+}
+
+/*text box styling */
+textarea {
+    margin: 10px;
+    width: 80%;
+}
+
 
