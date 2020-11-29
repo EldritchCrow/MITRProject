@@ -156,12 +156,12 @@ a, a:hover, a:focus {
     padding-left: 20px ;
 }
 #formEventName {
-    font-size: xx-large;
+    font-size: x-large;
     text-decoration: underline;
 }
 
 .formData {
-    padding: 10px;
+    padding: 3px;
 }
 
 /* box for fee info */
@@ -190,7 +190,7 @@ a, a:hover, a:focus {
 
 /*text box styling */
 textarea {
-    margin: 10px;
+    margin: 3px;
     width: 80%;
 }
 
