@@ -33,7 +33,10 @@
         <div class="formData" id="formCustomerNameHolder"></div>
         <div class="formData" id="formCustomerNameHolder2">Second Customer Name: Samantha Jones</div>
         <div class="formData" id="formDateHolder"></div>
-        <div class="formData" id="formLocationHolder"></div>
+        <div class="formData" id="formEventTime"></div>
+        <div class="formData" id="formLocationCeremonyHolder"></div>
+        <div class="formData" id="formLocationReceptionHolder"></div>
+        <div class="formData" id="formLocationDinnerHolder"></div>
         <div class="formData" id="formDinner">Event Dinner: Steak and Potatoes</div>
         <div class="formData" id="formDrinks">Event Drinks: Cocktails</div>
         <div id="workInfo">
@@ -61,12 +64,17 @@
           var cleaningFeeEvent = CleaningFee();
           var securityFeeEvent = SecurityFee();
           var securityDepositEvent = SecurityDeposit();
+          var EventTimeEvent = EventTime();
           var container = document.getElementById("formEventNameHolder");
           container.innerHTML+='<div id="formEventName">'+ event.partyName[0].name +'</div>';
           container = document.getElementById("formCustomerNameHolder");
           container.innerHTML+='<div id="formCustomerName">Customer Name: '+ customer.Customer[0].fName + ' ' + customer.Customer[0].lName +'</div>';
-          container = document.getElementById("formLocationHolder");
-          container.innerHTML+='<div id="formEventLocation">Location of Event: '+ locationOfEvent.Location[0].location +'</div>';
+          container = document.getElementById("formLocationCeremonyHolder");
+          container.innerHTML+='<div id="formCeremonyLocation">Location of Ceremony: '+ locationOfEvent.Location[0].location[0] +'</div>';
+          container = document.getElementById("formLocationReceptionHolder");
+          container.innerHTML+='<div id="formReceptionLocation">Location of Reception: '+ locationOfEvent.Location[0].location[1] +'</div>';
+          container = document.getElementById("formLocationDinnerHolder");
+          container.innerHTML+='<div id="formDinnerLocation">Location of Dinner: '+ locationOfEvent.Location[0].location[2] +'</div>';
           container = document.getElementById("formDateHolder");
           container.innerHTML+='<div id="formEventDate">Date of Event: '+ date.Date[0].date +'</div>';
           container = document.getElementById("formNumberOfGuardsHolder");
@@ -81,6 +89,8 @@
           container.innerHTML+='<div id="formEventSecurityFee">Security Fee: '+ securityFeeEvent.SecurityFee[0].fee +'</div>';
           container = document.getElementById("formsecurityDepositHolder");
           container.innerHTML+='<div id="formEventsecurityDeposit">Security Deposit: '+ securityDepositEvent.SecurityDeposit[0].fee +'</div>';
+          container = document.getElementById("formEventTime");
+          container.innerHTML+='<div id="formEventTime">Event Time: '+ EventTimeEvent.EventTime[0].time +'</div>';
         </script>
    </div>
 		<div class="split right">

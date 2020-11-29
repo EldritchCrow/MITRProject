@@ -156,7 +156,7 @@ function EventLocation() {
     return {
         Location: [
             {
-                location: "The Pond",
+                location: ["The Pond", "The Patio", "Tent"]
             },
             {
                 location: "The Veranda",
@@ -305,6 +305,16 @@ function CleaningFee(){
         CleaningFee: [
             {
                 fee: "$1000",
+            }
+        ]
+    }
+}
+function EventTime(){
+    //This will have the Time of the event
+    return{
+        EventTime: [
+            {
+                time: "6:00 PM",
             }
         ]
     }
