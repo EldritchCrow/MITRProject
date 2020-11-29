@@ -18,6 +18,12 @@ a, a:hover, a:focus {
     width: 100%;
     align-items: stretch;
 }
+#export {
+  width: 200px;
+  height: 50px;
+  font-size: 1.3rem;
+  background: #ee9bac;
+}
 #sidebar{
   width: 12%;
   position: fixed;
