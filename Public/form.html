@@ -10,31 +10,98 @@
    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
    <script src="resources/fonaApp.js"></script>
-
-   <div class="topnav">
-   		<a class="active" href="#home">Home</a>
-  		<input type="text" class="search" placeholder="Search..">
-  		<a href="#" class="notification">
-  			<span>&#128276</span>
-  			<span class="badge">3</span>
-		</a>
+   <div class="wholediv">
+    <div class="wrapper">
+      <nav id='sidebar'>
+        <ul>
+          <li class="active">
+             <a href="index.html">Overview</a>
+          </li>
+          <li>
+             <a href="form.html">Current Form</a>
+          </li>
+       </ul>
+      </nav>
+    </div>
+    <div class="topnav">
+  	  <input type="text" class="search" placeholder="Search..">
+		  </a>
+    </div>
+    <div class="container">
+      <div class="split left" id="tripleSeatInfo">
+        <div id="formEventNameHolder"></div>
+        <div class="formData" id="formCustomerNameHolder"></div>
+        <div class="formData" id="formCustomerNameHolder2">Second Customer Name: Samantha Jones</div>
+        <div class="formData" id="formDateHolder"></div>
+        <div class="formData" id="formEventTime"></div>
+        <div class="formData" id="formLocationCeremonyHolder"></div>
+        <div class="formData" id="formLocationReceptionHolder"></div>
+        <div class="formData" id="formLocationDinnerHolder"></div>
+          <textarea id="locationNotes" name="text" cols="25" rows="5">Notes:</textarea>
+        <div class="formData" id="formDinner">Event Dinner: Steak and Potatoes</div>
+        <div class="formData" id="formDrinks">Event Drinks: Cocktails</div>
+        <div id="workInfo">
+            <div class="formData" id="formNumberOfGuardsHolder"></div>
+            <div class="formData" id="formHoursOfGuardsHolder">Guards Hours: 6PM-11PM</div>
+            <div class="formData" id="formNumberOfCustodiansHolder"></div>
+            <div class="formData" id="formHoursOfCustodiansHolder">Custodian Hours: 7PM-12AM</div>
+        </div>
+        <div id="fees">
+            <div class="formData" id="formRentalFeeHolder"></div>
+            <div class="formData" id="formCleaningFeeHolder"></div>
+            <div class="formData" id="formSecurityFeeHolder"></div>
+            <div class="formData" id="formsecurityDepositHolder"></div>
+        </div>
+          <textarea name="text" cols="25" rows="5">Notes:</textarea>
+          <button id="export">Export</button>
+        <script>
+          var event = EventName();
+          var customer = CustomerName();
+          var date = DateofReservation();
+          var locationOfEvent = EventLocation();
+          var numberOfGuardsEvent = NumberOfGuards();
+          var numberOfCustodiansEvent = NumberOfCustodians();
+          var rentalFeeEvent = rentalFee();
+          var cleaningFeeEvent = CleaningFee();
+          var securityFeeEvent = SecurityFee();
+          var securityDepositEvent = SecurityDeposit();
+          var EventTimeEvent = EventTime();
+          var container = document.getElementById("formEventNameHolder");
+          container.innerHTML+='<div id="formEventName">'+ event.partyName[0].name +'</div>';
+          container = document.getElementById("formCustomerNameHolder");
+          container.innerHTML+='<div id="formCustomerName">Customer Name: '+ customer.Customer[0].fName + ' ' + customer.Customer[0].lName +'</div>';
+          container = document.getElementById("formLocationCeremonyHolder");
+          container.innerHTML+='<div id="formCeremonyLocation">Location of Ceremony: '+ locationOfEvent.Location[0].location[0] +'</div>';
+          container = document.getElementById("formLocationReceptionHolder");
+          container.innerHTML+='<div id="formReceptionLocation">Location of Reception: '+ locationOfEvent.Location[0].location[1] +'</div>';
+          container = document.getElementById("formLocationDinnerHolder");
+          container.innerHTML+='<div id="formDinnerLocation">Location of Dinner: '+ locationOfEvent.Location[0].location[2] +'</div>';
+          container = document.getElementById("formDateHolder");
+          container.innerHTML+='<div id="formEventDate">Date of Event: '+ date.Date[0].date +'</div>';
+          container = document.getElementById("formNumberOfGuardsHolder");
+          container.innerHTML+='<div id="formEventNumberOfGuards">Number of Guards: '+ numberOfGuardsEvent.Guards[0].guards +'</div>';
+          container = document.getElementById("formNumberOfCustodiansHolder");
+          container.innerHTML+='<div id="formEventNumberOfCustodians">Number of custodians: '+ numberOfCustodiansEvent.Custodians[0].custodians +'</div>';
+          container = document.getElementById("formRentalFeeHolder");
+          container.innerHTML+='<div id="formEventRentalFee">Rental Fee: '+ rentalFeeEvent.RentalFee[0].fee +'</div>';
+          container = document.getElementById("formCleaningFeeHolder");
+          container.innerHTML+='<div id="formEventCleaningFee">Cleaning Fee: '+ cleaningFeeEvent.CleaningFee[0].fee +'</div>';
+          container = document.getElementById("formSecurityFeeHolder");
+          container.innerHTML+='<div id="formEventSecurityFee">Security Fee: '+ securityFeeEvent.SecurityFee[0].fee +'</div>';
+          container = document.getElementById("formsecurityDepositHolder");
+          container.innerHTML+='<div id="formEventsecurityDeposit">Security Deposit: '+ securityDepositEvent.SecurityDeposit[0].fee +'</div>';
+          container = document.getElementById("formEventTime");
+          container.innerHTML+='<div id="formEventTime">Event Time: '+ EventTimeEvent.EventTime[0].time +'</div>';
+        </script>
    </div>
-   
-   <div class="container">
-   		<div class="split left">
-  			<div class="centered">
-    			<h2>Triple Seat Pull</h2>
-    			<p>Some text.</p>
-  			</div>
-		</div>
-
 		<div class="split right">
-  			<div class="centered">
-   				<h2>Form</h2>
-    			<p>Some text here too.</p>
-  			</div>
+            <div class="fill">
+                <img src="Resources/tripleSeatContract.png" alt="Contract Display" />
+            </div>
+
 		</div>
    </div>
+ </div>
 
 
 </body>

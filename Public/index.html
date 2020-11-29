@@ -3,30 +3,47 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
    <link rel="stylesheet" href="resources/css/master.css">
    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Pacifico&display=swap" rel="stylesheet">
+   <script src="resources/fonaApp.js"></script>
    <title>FONA Weddings Application</title>
 </head>
 <body>
+   <div class="topnav">
+      <input type="text" class="search" placeholder="Search..">
+   </div>
    <div class="wrapper">
       <nav id='sidebar'>
             <ul>
                <li class="active">
-                  <a href="#">Home</a>
+                  <a href="index.html">Overview</a>
                </li>
                <li>
-                  <a href="#">Forms</a>
-               </li>
-               <li>
-                  <a href="#">Calendar</a>
-               </li>
-               <li>
-                  <a href="#">Archived</a>
+                  <a href="form.html">Current Form</a>
                </li>
             </ul>
       </nav>
+      
       <div id="content">
+         <h2>Recent Documents</h2>
          <div id="recentContent" class="row">
+            
+            <div class="col-sm-2 wholeEventLITE"> 
+               <p>Recent Wedding</p>
+            </div>
+            <div class="col-sm-2 wholeEventLITE"> 
+               <p>Recent Wedding</p>
+            </div>
+            <div class="col-sm-2 wholeEventLITE"> 
+               <p>Recent Wedding</p>
+            </div>
+            <div class="col-sm-2 wholeEventLITE"> 
+               <p>Recent Wedding</p>
+            </div>
+            <div class="col-sm-2 wholeEventLITE"> 
+               <p>Recent Wedding</p>
+            </div>
+            <!--
             <div class="col-sm-2 docDiv">
-               <img class="docImg" src="Resources/document.png">
+               < class="docImg">
                <p>Recent Document 1</p>
             </div>
             <div class="col-sm-2 docDiv">
@@ -48,12 +65,27 @@
             <div class="col-sm-2 docDiv">
                <img class="docImg" src="Resources/document.png">
                <p>Recent Document 6</p>
-            </div>
+            </div> -->
          </div>
+         <div id="events"></div>
+         <script>
+            var x = EventName();
+            var y = DateofReservation();
+            var container = document.getElementById("events");
+            var counter = 1;
+            x.partyName.forEach( (i) =>{
+               container.innerHTML+='<div class="col-sm-2 wholeEvent" id="event'+ counter +'">' + '<div class="circle">' + '</div>' + '<div class="eventName">' + i.name + '</div>' + '</div>';
+               counter++;
+            });
+            counter = 1;
+            y.Date.forEach( (i) =>{
+               var temp = document.getElementById("event" + counter);
+               temp.innerHTML+='<div class="date">' + i.date + '</div>';
+               counter++;
+            });
+         </script>
       </div>
    </div>
-   
-   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+   <script>window.jQuery = window.$ = require('jquery');</script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-   <script src="resources/fonaApp.js"></script>
 </body>
