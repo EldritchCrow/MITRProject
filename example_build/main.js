@@ -1,7 +1,5 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
-const { doOAuth } = require("../api/test_api.js");
-const url = require("url");
 
 let win;
 
@@ -30,7 +28,7 @@ const createWindow = () => {
    mainWindow.loadFile(path.join(__dirname, '../public/index.html'));
  
    // Open the DevTools.
-   //mainWindow.webContents.openDevTools();
+   mainWindow.webContents.openDevTools();
  };
 
 app.on('ready', createWindow);

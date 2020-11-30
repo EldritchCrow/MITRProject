@@ -5,10 +5,11 @@ var crypto = require('crypto');
 var oauth = require('oauth-1.0a');
 var request = require('request');
 var Promise = require("promise");
-const { resolve } = require("path");
 
 
-function getEvents() {
+function getEvents(page) {
+    if(page == 0)
+        page = 1;
     return new Promise((resolve, reject) => {
         var tripleseat = oauth({
             consumer: {
@@ -20,7 +21,7 @@ function getEvents() {
                 return crypto.createHmac('sha1', key).update(base).digest('base64');
             }
         });
-        var url = 'https://api.tripleseat.com/v1/events.json';
+        var url = 'https://api.tripleseat.com/v1/events.json?page=' + page;
         var request_data = {
             url: url,
             method: 'GET'
@@ -36,7 +37,6 @@ function getEvents() {
                 reject(err);
                 return;
             }
-            console.log(JSON.parse(event));
             resolve(JSON.parse(event));
         });
     });

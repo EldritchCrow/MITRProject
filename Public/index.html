@@ -3,8 +3,10 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
    <link rel="stylesheet" href="resources/css/master.css">
    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Pacifico&display=swap" rel="stylesheet">
+   <script>window.jQuery = window.$ = require('jquery');</script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
    <script src="resources/fonaApp.js"></script>
-   <title>FONA Weddings Application</title>
+   <title>FONA Event Management Application</title>
 </head>
 <body>
    <div class="topnav">
@@ -25,67 +27,16 @@
       <div id="content">
          <h2>Recent Documents</h2>
          <div id="recentContent" class="row">
-            
-            <div class="col-sm-2 wholeEventLITE"> 
-               <p>Recent Wedding</p>
-            </div>
-            <div class="col-sm-2 wholeEventLITE"> 
-               <p>Recent Wedding</p>
-            </div>
-            <div class="col-sm-2 wholeEventLITE"> 
-               <p>Recent Wedding</p>
-            </div>
-            <div class="col-sm-2 wholeEventLITE"> 
-               <p>Recent Wedding</p>
-            </div>
-            <div class="col-sm-2 wholeEventLITE"> 
-               <p>Recent Wedding</p>
-            </div>
-            <!--
-            <div class="col-sm-2 docDiv">
-               < class="docImg">
-               <p>Recent Document 1</p>
-            </div>
-            <div class="col-sm-2 docDiv">
-               <img class="docImg" src="Resources/document.png">
-               <p>Recent Document 2</p>
-            </div>
-            <div class="col-sm-2 docDiv">
-               <img class="docImg" src="Resources/document.png">
-               <p>Recent Document 3</p>
-            </div>
-            <div class="col-sm-2 docDiv">
-               <img class="docImg" src="Resources/document.png">
-               <p>Recent Document 4</p>
-            </div>
-            <div class="col-sm-2 docDiv">
-               <img class="docImg" src="Resources/document.png">
-               <p>Recent Document 5</p>
-            </div>
-            <div class="col-sm-2 docDiv">
-               <img class="docImg" src="Resources/document.png">
-               <p>Recent Document 6</p>
-            </div> -->
+            Loading...
          </div>
-         <div id="events"></div>
-         <script>
-            var x = EventName();
-            var y = DateofReservation();
-            var container = document.getElementById("events");
-            var counter = 1;
-            x.partyName.forEach( (i) =>{
-               container.innerHTML+='<div class="col-sm-2 wholeEvent" id="event'+ counter +'">' + '<div class="circle">' + '</div>' + '<div class="eventName">' + i.name + '</div>' + '</div>';
-               counter++;
-            });
-            counter = 1;
-            y.Date.forEach( (i) =>{
-               var temp = document.getElementById("event" + counter);
-               temp.innerHTML+='<div class="date">' + i.date + '</div>';
-               counter++;
-            });
-         </script>
+         <div id="pageNumber">
+            <button type="button" id="buttonNewer">Newer events</button>
+            <button type="button" id="buttonOlder">Older events</button>
+            <label id="currentPage" style="display: none;"></label>
+         </div>
+         <div id="events">
+            Loading...
+         </div>
       </div>
    </div>
-   <script>window.jQuery = window.$ = require('jquery');</script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>

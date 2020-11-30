@@ -3,14 +3,6 @@
    <head>
       <meta charset = "UTF-8">
       <title>Hello World!</title>
-      <script>
-         let $ = require("jquery");
-         $(document).ready(function() {
-            var url = URL(window.location.href);
-            var oauth_verifier = url.searchParams.get("oauth_verifier");
-            console.log(oauth_verifier);
-         });
-      </script>
    </head>
    
    <body>
@@ -22,7 +14,8 @@
       <script>
          let { getEvents } = require("../api/test_api.js");
          setTimeout(function() {
-            getEvents().then(data => {});
+            getEvents(1).then(data => {});
+            getEvents(0).then(data => {});
          }, 10);
       </script>
    </body>

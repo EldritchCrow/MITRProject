@@ -24,6 +24,8 @@
     "request": "^2.88.2"
   },
   "dependencies": {
-    "promise": "^8.1.0"
+    "promise": "^8.1.0",
+    "sqlite": "^4.0.17",
+    "sqlite3": "^5.0.0"
   }
 }
