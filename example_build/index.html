@@ -3,8 +3,14 @@
    <head>
       <meta charset = "UTF-8">
       <title>Hello World!</title>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="./browser.js"></script>
+      <script>
+         let $ = require("jquery");
+         $(document).ready(function() {
+            var url = URL(window.location.href);
+            var oauth_verifier = url.searchParams.get("oauth_verifier");
+            console.log(oauth_verifier);
+         });
+      </script>
    </head>
    
    <body>
@@ -14,19 +20,10 @@
       and Electron <script>document.write(process.versions.electron)</script>.
       <br>
       <script>
-         const fs = require("fs");
-         const path = require('path');
-         document.write(fs.readFileSync(path.join(__dirname, 'dummy.txt')));
-      </script>
-      <br>
-      <script>
-         document.write(__dirname);
-      </script>
-      <br>
-      <script>
-         const { hello } = require(path.join(__dirname, "api.js"));
-         var x = hello();
-         document.write(JSON.stringify(x));
+         let { getEvents } = require("../api/test_api.js");
+         setTimeout(function() {
+            getEvents().then(data => {});
+         }, 10);
       </script>
    </body>
 </html>
