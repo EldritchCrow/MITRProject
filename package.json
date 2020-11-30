@@ -19,6 +19,11 @@
   "devDependencies": {
     "electron": "^10.1.5",
     "electron-packager": "^15.1.0",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "oauth-1.0a": "^2.2.6",
+    "request": "^2.88.2"
+  },
+  "dependencies": {
+    "promise": "^8.1.0"
   }
 }

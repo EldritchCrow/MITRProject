@@ -1,6 +1,7 @@
-const {app, BrowserWindow} = require('electron');
-const url = require('url');
+const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const { doOAuth } = require("../api/test_api.js");
+const url = require("url");
 
 let win;
 
@@ -22,6 +23,8 @@ const createWindow = () => {
        nodeIntegration: true
      }
    });
+  
+   mainWindow.maximize();
  
    // and load the index.html of the app.
    mainWindow.loadFile(path.join(__dirname, '../public/index.html'));
