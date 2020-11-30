@@ -8,6 +8,10 @@ a, a:hover, a:focus {
     text-decoration: none;
     transition: all 0.3s;
 }
+
+h2 {
+    padding-left: 5px;
+}
 #sideNav{
     padding-right: 0px;
     border-right: 0px;
@@ -25,7 +29,7 @@ a, a:hover, a:focus {
     align-items: stretch;
 }
 #sidebar{
-    width: 250px;
+    width: 12%;
     position: fixed;
     height: 100vh;
     top: 0;
@@ -35,6 +39,7 @@ a, a:hover, a:focus {
     background: #ee9bac;
 }
 #sidebar ul{
+    padding-top: 60px;
     list-style-type: none;
 }
 #sidebar ul p {
@@ -51,21 +56,154 @@ a, a:hover, a:focus {
 }
 #sidebar ul li a {
     padding: 10px;
-    font-size: 1.1em;
+    font-size: 1.2em;
     display: block;
 }
 #content{
     padding-left: 250px;
     width: 100%;
 }
-.docImg{
-    height: 200px;
-    width: 160px;
-    padding-left: 35px;
-}
+
 .docDiv p{
     font-size: 20px;
 }
 #recentContent{
     border-bottom: 1px solid black;
+    margin-bottom: 10px;
 }
+
+.topnav {
+  overflow: hidden;
+  background-color:   #E8E8E8;
+  margin-bottom: 10px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  width: 205px;
+  float: right;
+  padding: 10px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-right: 15px;
+  font-size: 17px;
+}
+
+.search {
+  padding-bottom: 5px;
+}
+
+#events {
+    position: center;
+}
+
+.wholeEvent {
+    display: inline-block;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 110px;
+    text-align: center;
+    padding-top: 15px;
+    background: #E8E8E8;
+}
+
+.wholeEventLITE {
+    display: inline-block;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 200px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.date {
+    padding-top: 15px;
+}
+
+.circle {
+  height: 8px;
+  width: 8px;
+  background-color: #90EE90;
+  border-radius: 50%;
+}
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #ee9bac;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
+  #loginTitle{
+    text-align: center;
+  }

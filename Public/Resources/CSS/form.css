@@ -1,3 +1,61 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+#sideNav{
+    padding-right: 0px;
+    border-right: 0px;
+    margin-right: 0px;
+}
+.wrapper{
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+#export {
+  width: 200px;
+  height: 50px;
+  font-size: 1.3rem;
+  background: #ee9bac;
+}
+#sidebar{
+  width: 12%;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  color: #fafafa;
+  background: #ee9bac;
+}
+#sidebar ul{
+  padding-top: 60px;
+  list-style-type: none;
+}
+#sidebar ul p {
+  color: #fafafa;
+  padding: 10px;
+}
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #ee9bac;
+}
+#sidebar ul li a:hover {
+  color: #ee9bac;
+  background: #fafafa;
+}
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.2em;
+  display: block;
+}
+
 .topnav {
   overflow: hidden;
   background-color:   #E8E8E8;
@@ -28,78 +86,116 @@
 
 /* Style the search box inside the navigation bar */
 .topnav input[type=text] {
+  width: 205px;
   float: right;
   padding: 10px;
   border: none;
   margin-top: 10px;
-  margin-right: 16px;
+  margin-bottom: 5px;
+  margin-right: 15px;
   font-size: 17px;
 }
 
 .search {
-  padding-bottom: 5px: 
+  padding-bottom: 5px; 
 }
-.notification {
-  background-color:   #E8E8E8;
-  color: white;
-  text-decoration: none;
-  padding: 15px 30px;
-  position: relative;
-  display: inline-block;
-  border-radius: 2px;
-}
-
-.notification:hover {
-  background: red;
-}
-
-.notification .badge {
-  position: absolute;
-  top: -0px;
-  right: -10px;
-  padding: 5px 10px;
-  border-radius: 50%;
-  background: red;
-  color: white;
-}
-
-
 
 .split {
   height: 100%;
-  width: 50%;
+  width: 44%;
   position: fixed;
   z-index: 1;
   top: 20;
   overflow-x: hidden;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 /* Control the left side */
 .left {
+  display: block;
   left: 0;
   border-top-color: black 10px;
   border-right-color: black 2px;
   background: #faf3dc;
-  
-  
-
+  margin-left: 12%;
 }
 
 /* Control the right side */
 .right {
+  display: block;
   right: 0;
   border-top-color: black 2px;
   background: #faf3dc;
-  
 }
 
 /* If you want the content centered horizontally and vertically */
 .centered {
   position: absolute;
   top: 35%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+/*contract image sizing */
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+/* styling for left side text */
+#tripleSeatInfo {
+    padding-left: 20px ;
+}
+#formEventName {
+    font-size: x-large;
+    text-decoration: underline;
+}
+
+.formData {
+    padding: 3px;
+}
+
+/* box for fee info */
+#fees {
+    overflow: hidden;
+    margin-left: 10px;
+    padding: 5px;
+    background: white;
+    width: 40%;
+}
+#fees .formData {
+    padding: 3px;
+}
+
+/* box for worker info */
+#workInfo {
+    float: left;
+    margin-left: 10px;
+    padding: 5px;
+    background: white;
+    width: 40%;
+}
+#workInfo .formData {
+    padding: 3px;
+}
+
+/*text box styling */
+textarea {
+    margin: 3px;
+    width: 80%;
+}
+
+#locationNotes {
+    height: 10%;
+}
+
 

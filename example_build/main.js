@@ -16,20 +16,21 @@ let win;
 
 const createWindow = () => {
 
-  const mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 900,
-    webPreferences: {
-      nodeIntegration: true
-    }
-  });
-
-  // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
-};
+   const mainWindow = new BrowserWindow({
+     width: 2000,
+     height: 1500,
+     webPreferences: {
+       nodeIntegration: true
+     }
+   });
+  
+   mainWindow.maximize();
+ 
+   // and load the index.html of the app.
+   mainWindow.loadFile(path.join(__dirname, '../public/index.html'));
+ 
+   // Open the DevTools.
+   //mainWindow.webContents.openDevTools();
+ };
 
 app.on('ready', createWindow);
-
