@@ -6,6 +6,7 @@ let { registerVisit, resetDB, getRecents,
 
 let mainWindow;
 let lastPage = -1;
+let lastStatus = "definite";
 
 process.env.ELECTRON_ENABLE_LOGGING = 1;
 
@@ -60,6 +61,12 @@ ipcMain.on('getLocationNotes', async (event, arg) => {
 ipcMain.on('getGeneralNotes', async (event, arg) => {
   var t = await getGeneralNotes(parseInt(arg));
   event.reply("getGenNotes-reply", t);
+});
+ipcMain.on('statusUpdate', (event, arg) => {
+  lastStatus = arg;
+})
+ipcMain.on('lastStatus', (event, arg) => {
+  event.returnValue = lastStatus;
 });
 
 app.on('ready', createWindow);

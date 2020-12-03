@@ -10,7 +10,15 @@
 </head>
 <body>
    <div class="topnav">
-      <input type="text" class="search" placeholder="Search..">
+      <input id="searchQuery" type="text" class="search" placeholder="Search..">
+      <select name="status" id="statusParam">
+         <option value="prospect">Prospect</option>
+         <option value="tentative">Tentative</option>
+         <option value="definite">Definite</option>
+         <option value="closed">Closed</option>
+         <option value="lost">Lost</option>
+      </select>
+      <label id="statusLabel">Event status:</label>
    </div>
    <div class="wrapper">
       <nav id='sidebar'>

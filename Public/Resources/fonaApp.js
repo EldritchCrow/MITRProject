@@ -6,7 +6,10 @@ const path = require("path");
 var Promise = require("promise");
 
 $(document).ready(function() {
-    console.log("Document ready");
+
+    var lastStat = ipcRenderer.sendSync('lastStatus', 'ping');
+    var searchStr = 'option[value="' + lastStat + '"]';
+    $(searchStr).prop("selected", true);
 
     // Populate recent events section
     setTimeout(async function() {
@@ -20,7 +23,6 @@ $(document).ready(function() {
 
     $("#buttonOlder").on("click", async () => {
         if($("#mutex").text() != "") {
-            console.log("mutex was locked, aborted button press");
             return;
         }
         $("#mutex").text("locked");
@@ -28,36 +30,54 @@ $(document).ready(function() {
         if(pageNum < 1)
             return;
         $("#events").html("Loading...");
-        await updateEventsDiv(pageNum);
+        var status = $("#statusParam").val();
+        var query = $("#searchQuery").val();
+        await updateEventsDiv(pageNum, status, query);
         $("#mutex").text("");
     });
     $("#buttonNewer").on("click", async () => {
         if($("#mutex").text() != "") {
-            console.log("mutex was locked, aborted button press");
             return;
         }
         $("#mutex").text("locked");
         var temp = $("#events").html();
         $("#events").html("Loading...");
         var pageNum = parseInt($("#currentPage").text()) + 1;
-        var maxPages = await getNumPages();
+        var status = $("#statusParam").val();
+        var query = $("#searchQuery").val();
+        var maxPages = await getNumPages(status, query);
         if(pageNum > maxPages) {
             $("#events").html(temp);
             return;
         }
-        await updateEventsDiv(pageNum);
+        await updateEventsDiv(pageNum, status, query);
         $("#mutex").text("");
     });
-
-    console.log("Document ready() trigger completed");
+    $("#statusParam").change(async (e) => {
+        $("#events").html("Loading...");
+        ipcRenderer.send("statusUpdate",  $("#statusParam").val());
+        var status = $("#statusParam").val();
+        var query = $("#searchQuery").val();
+        var pageNum = await getNumPages(status, query);
+        await updateEventsDiv(pageNum, status, query);
+        $("#mutex").text("");
+    });
+    $("#searchQuery").change(async (e) => {
+        $("#events").html("Loading...");
+        ipcRenderer.send("statusUpdate",  $("#statusParam").val());
+        var status = $("#statusParam").val();
+        var query = $("#searchQuery").val();
+        var pageNum = await getNumPages(status, query);
+        await updateEventsDiv(pageNum, status, query);
+        $("#mutex").text("");
+    });
 });
 
 
-async function updateEventsDiv(pageNum) {
+async function updateEventsDiv(pageNum, status, query) {
     ipcRenderer.send('lastPage', "" + pageNum);
     $("#currentPage").text("" + pageNum);
-    var events = await getEventPage(pageNum);
-    console.log("shouldn't be here on return");
+    var events = await getEventPage(pageNum, status, query);
     var newHTML = "";
     events.results.forEach(item => {
         newHTML += '<div class="col-sm-2 wholeEvent">';
@@ -67,6 +87,8 @@ async function updateEventsDiv(pageNum) {
         newHTML += '<p class="hiddenIDLabel">' + item.id + '<p>';
         newHTML += '</div>';
     });
+    if(events.results.length == 0)
+        newHTML = "No results found."
     $("#events").html(newHTML);
     $(".wholeEvent").on("click", (e) => {
         var targetEvent = $(e.currentTarget).find(".hiddenIDLabel").text();
@@ -91,10 +113,11 @@ ipcRenderer.on('getRecents-reply', async (event, arg) => {
 
 ipcRenderer.on('whatPage-reply', async (event, arg) => {
     var pageNum = parseInt(arg);
+    var status = $("#statusParam").val();
+    var query = $("#searchQuery").val();
     if(parseInt(arg) == -1)
-        pageNum = await getNumPages();
-    console.log("should be here on return");
-    await updateEventsDiv(pageNum);
+        pageNum = await getNumPages(status, query);
+    await updateEventsDiv(pageNum, status, query);
 });
 
 

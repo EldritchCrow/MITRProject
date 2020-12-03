@@ -4,15 +4,18 @@ let Promise = require("promise");
 let request = require('request');
 
 
-function getEventPage(page) {
-    console.log("page: " + page);
+function getEventPage(page, status, query) {
+    if(page < 1)
+        page = 1;
     return new Promise((resolve, reject) => {
         try {
             var consumer = APIConsumer();
             var request_data = {
-                url: 'https://api.tripleseat.com/v1/events.json?page=' + page,
+                url: 'https://api.tripleseat.com/v1/events/search.json?page=' + page,
                 method: 'GET'
             };
+            if(status) request_data.url += "&status=" + status;
+            if(query) request_data.url += "&query=" + encodeURIComponent(query);
             var req = request({
                 url: request_data.url,
                 method: request_data.method,
@@ -25,10 +28,9 @@ function getEventPage(page) {
                         reject(err);
                         return;
                     }
-                    console.log("received response");
+                    console.log(event.substring(0,50));
                     resolve(JSON.parse(event));
                 } catch (error) {
-                    console.log(error);
                     reject(error);
                 }
             });
@@ -76,14 +78,16 @@ function getEventByID(id, financials=false) {
 }
 
 
-function getNumPages() {
+function getNumPages(status, query) {
     return new Promise((resolve, reject) => {
         try {
             var consumer = APIConsumer();
             var request_data = {
-                url: 'https://api.tripleseat.com/v1/events.json',
+                url: 'https://api.tripleseat.com/v1/events/search.json?page=1',
                 method: 'GET'
             };
+            if(status) request_data.url += "&status=" + status;
+            if(query) request_data.url += "&query=" + encodeURIComponent(query);
             request({
                 url: request_data.url,
                 method: request_data.method,

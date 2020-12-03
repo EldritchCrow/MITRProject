@@ -29,7 +29,6 @@ h2 {
     align-items: stretch;
 }
 #sidebar{
-    width: 12%;
     position: fixed;
     height: 100vh;
     top: 0;
@@ -107,10 +106,20 @@ h2 {
   float: right;
   padding: 10px;
   border: none;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  margin-right: 15px;
+  margin: 10px;
   font-size: 17px;
+}
+
+#statusParam {
+  margin-right: 10px;
+  margin-top: 18px;
+  float: right;
+}
+
+#statusLabel {
+  margin-right: 10px;
+  margin-top: 18px;
+  float: right;
 }
 
 .search {
