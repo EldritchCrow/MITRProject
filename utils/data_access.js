@@ -5,6 +5,7 @@ let request = require('request');
 
 
 function getEventPage(page) {
+    console.log("page: " + page);
     return new Promise((resolve, reject) => {
         try {
             var consumer = APIConsumer();
@@ -12,17 +13,24 @@ function getEventPage(page) {
                 url: 'https://api.tripleseat.com/v1/events.json?page=' + page,
                 method: 'GET'
             };
-            request({
+            var req = request({
                 url: request_data.url,
                 method: request_data.method,
-                headers: consumer.toHeader(consumer.authorize(request_data))
+                headers: consumer.toHeader(consumer.authorize(request_data)),
+                timeout: 10000
             }, function(err, res, event) {
-                if(err) {
-                    console.error('error:', err);
-                    reject(err);
-                    return;
+                try {
+                    if(err) {
+                        console.error('error:', err);
+                        reject(err);
+                        return;
+                    }
+                    console.log("received response");
+                    resolve(JSON.parse(event));
+                } catch (error) {
+                    console.log(error);
+                    reject(error);
                 }
-                resolve(JSON.parse(event));
             });
         } catch (err) {
             console.error(err);
@@ -31,7 +39,7 @@ function getEventPage(page) {
 }
 
 
-function getEventByID(id) {
+function getEventByID(id, financials=false) {
     return new Promise((resolve, reject) => {
         try {
             var consumer = APIConsumer();
@@ -39,20 +47,30 @@ function getEventByID(id) {
                 url: 'https://api.tripleseat.com/v1/events/' + id + '.json',
                 method: 'GET'
             };
+            if(financials)
+                request_data.url += "?show_financial=true";
+            // console.log(request_data.url);
             request({
                 url: request_data.url,
                 method: request_data.method,
-                headers: consumer.toHeader(consumer.authorize(request_data))
+                headers: consumer.toHeader(consumer.authorize(request_data)),
+                timeout: 10000
             }, function(err, res, event) {
-                if(err) {
-                    console.error('error:', err);
-                    reject(err);
-                    return;
+                try {
+                    if(err) {
+                        console.error('error:', err);
+                        reject(err);
+                        return;
+                    }
+                    // console.log(event.substring(0,50));
+                    resolve(JSON.parse(event));
+                } catch (error) {
+                    console.log(error);
+                    reject(error);
                 }
-                resolve(JSON.parse(event));
             });
         } catch (error) {
-            console.error(err);
+            console.error(error);
         }
     });
 }
@@ -69,14 +87,20 @@ function getNumPages() {
             request({
                 url: request_data.url,
                 method: request_data.method,
-                headers: consumer.toHeader(consumer.authorize(request_data))
+                headers: consumer.toHeader(consumer.authorize(request_data)),
+                timeout: 10000
             }, function(err, res, event) {
-                if(err) {
-                    console.error('error:', err);
-                    reject(err);
-                    return;
+                try {
+                    if(err) {
+                        console.error('error:', err);
+                        reject(err);
+                        return;
+                    }
+                    resolve(JSON.parse(event).total_pages);
+                } catch (error) {
+                    console.log(error);
+                    reject(error);
                 }
-                resolve(JSON.parse(event).total_pages);
             });
         } catch (error) {
             console.error(err);

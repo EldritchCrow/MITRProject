@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/EldritchCrow/MITRProject#readme",
   "devDependencies": {
-    "electron": "^10.1.5",
+    "electron": "^8.2.5",
     "electron-packager": "^15.1.0",
     "jquery": "^3.5.1",
     "oauth-1.0a": "^2.2.6",

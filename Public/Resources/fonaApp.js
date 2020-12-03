@@ -1,44 +1,42 @@
 
 
 let { getEventByID, getNumPages, getEventPage } = require("../utils/data_access.js");
-let { getRecents, resetDB } = require("../utils/sql_wrapper.js");
+var { ipcRenderer } = require("electron");
+const path = require("path");
+var Promise = require("promise");
 
 $(document).ready(function() {
-
     console.log("Document ready");
 
     // Populate recent events section
     setTimeout(async function() {
-        var recents = await getRecents();
-        var newHTML = "";
-        recents.forEach(async item => {
-            var event = await getEventByID(item.event_id);
-            console.log("shouldn't be here");
-            newHTML += '<div class="col-sm-2 wholeEventLITE"> ';
-            newHTML += '<p>' + event.name + '</p>';
-            newHTML += '</div>';
-        });
-        $("#recentContent").html(newHTML);
+        ipcRenderer.send('getRecents', 'ping');
     }, 1);
-
-    console.log("Recent events populated");
 
     // Populate all events of the most recent page
     setTimeout(async () => {
-        var pageNum = await getNumPages();
-        await updateEventsDiv(pageNum);
+        ipcRenderer.send('whatPage', 'ping');
     }, 1);
 
-    console.log("All events populated");
-
     $("#buttonOlder").on("click", async () => {
+        if($("#mutex").text() != "") {
+            console.log("mutex was locked, aborted button press");
+            return;
+        }
+        $("#mutex").text("locked");
         var pageNum = parseInt($("#currentPage").text()) - 1;
         if(pageNum < 1)
             return;
         $("#events").html("Loading...");
         await updateEventsDiv(pageNum);
-    })
+        $("#mutex").text("");
+    });
     $("#buttonNewer").on("click", async () => {
+        if($("#mutex").text() != "") {
+            console.log("mutex was locked, aborted button press");
+            return;
+        }
+        $("#mutex").text("locked");
         var temp = $("#events").html();
         $("#events").html("Loading...");
         var pageNum = parseInt($("#currentPage").text()) + 1;
@@ -48,28 +46,56 @@ $(document).ready(function() {
             return;
         }
         await updateEventsDiv(pageNum);
-    })
+        $("#mutex").text("");
+    });
 
-    console.log("Button listeners added");
+    console.log("Document ready() trigger completed");
 });
 
 
 async function updateEventsDiv(pageNum) {
-    // console.log('pageNum: ' + pageNum);
+    ipcRenderer.send('lastPage', "" + pageNum);
     $("#currentPage").text("" + pageNum);
     var events = await getEventPage(pageNum);
+    console.log("shouldn't be here on return");
     var newHTML = "";
-    events.results.forEach(async item => {
+    events.results.forEach(item => {
         newHTML += '<div class="col-sm-2 wholeEvent">';
         newHTML += '<div class="circle"></div>' ;
         newHTML += '<div class="eventName">' + item.name + '</div>';
-        newHTML += '<div class="date">' + item.event_start.substring(0,10) + '</div>';
+        newHTML += '<div class="date">' + item.event_date + '</div>';
+        newHTML += '<p class="hiddenIDLabel">' + item.id + '<p>';
         newHTML += '</div>';
     });
     $("#events").html(newHTML);
+    $(".wholeEvent").on("click", (e) => {
+        var targetEvent = $(e.currentTarget).find(".hiddenIDLabel").text();
+        window.location = path.join(__dirname, "../Public/form.html") + '?targ=' + targetEvent;
+    });
 }
 
+ipcRenderer.on('getRecents-reply', async (event, arg) => {
+    var recents = arg.split(",").map(x => parseInt(x));
+    var items = await Promise.all(recents.map(item => {
+        return new Promise(async (resolve, reject) => {
+            var event = await getEventByID(item);
+            var piece =  '<div class="col-sm-2 wholeEventLITE"> ';
+            piece += '<p>' + event.event.name + '</p>';
+            piece += '</div>';
+            resolve(piece);
+        });
+    }));
+    var newHTML = items.join("");
+    $("#recentContent").html(newHTML);
+});
 
+ipcRenderer.on('whatPage-reply', async (event, arg) => {
+    var pageNum = parseInt(arg);
+    if(parseInt(arg) == -1)
+        pageNum = await getNumPages();
+    console.log("should be here on return");
+    await updateEventsDiv(pageNum);
+});
 
 
 /*

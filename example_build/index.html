@@ -12,10 +12,9 @@
       and Electron <script>document.write(process.versions.electron)</script>.
       <br>
       <script>
-         let { getEvents } = require("../api/test_api.js");
+         let { getEvents } = require("../utils/test_api.js");
          setTimeout(function() {
-            getEvents(1).then(data => {});
-            getEvents(0).then(data => {});
+            getEvents(45).then(data => {});
          }, 10);
       </script>
    </body>
