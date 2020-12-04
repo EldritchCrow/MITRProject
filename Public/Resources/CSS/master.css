@@ -131,15 +131,17 @@ h2 {
 }
 
 .wholeEvent {
-    display: inline-block;
-    margin: 10px;
-    border-radius: 10px;
-    border: 1px solid black;
-    height: 110px;
-    text-align: center;
-    padding-top: 15px;
-    background: #E8E8E8;
-}
+     display: inline-block;
+     margin: 10px;
+     border-radius: 10px;
+     border: 1px solid black;
+     height: 110px;
+     text-align: center;
+     padding-top: 15px;
+     padding-bottom: 15px;
+     background: #E8E8E8;
+     min-width: 246px;
+ }
 
 .wholeEventLITE {
     display: inline-block;
