@@ -162,6 +162,7 @@ a, a:hover, a:focus {
 
 .formData {
     padding: 3px;
+    display: inline-block;
 }
 
 /* box for fee info */

@@ -3,7 +3,6 @@
 let { getEventByID, getNumPages, getEventPage } = require("../utils/data_access.js");
 var { ipcRenderer } = require("electron");
 const path = require("path");
-var Promise = require("promise");
 
 $(document).ready(function() {
 
@@ -79,16 +78,16 @@ async function updateEventsDiv(pageNum, status, query) {
     $("#currentPage").text("" + pageNum);
     var events = await getEventPage(pageNum, status, query);
     var newHTML = "";
-    events.results.forEach(item => {
+    for(const item of events.results) {
         newHTML += '<div class="col-sm-2 wholeEvent">';
         newHTML += '<div class="circle"></div>' ;
         newHTML += '<div class="eventName">' + item.name + '</div>';
         newHTML += '<div class="date">' + item.event_date + '</div>';
         newHTML += '<p class="hiddenIDLabel">' + item.id + '<p>';
         newHTML += '</div>';
-    });
+    }
     if(events.results.length == 0)
-        newHTML = "No results found."
+        newHTML = "No results found.";
     $("#events").html(newHTML);
     $(".wholeEvent").on("click", (e) => {
         var targetEvent = $(e.currentTarget).find(".hiddenIDLabel").text();
@@ -98,17 +97,16 @@ async function updateEventsDiv(pageNum, status, query) {
 
 ipcRenderer.on('getRecents-reply', async (event, arg) => {
     var recents = arg.split(",").map(x => parseInt(x));
-    var items = await Promise.all(recents.map(item => {
-        return new Promise(async (resolve, reject) => {
-            var event = await getEventByID(item);
-            var piece =  '<div class="col-sm-2 wholeEventLITE"> ';
-            piece += '<p>' + event.event.name + '</p>';
-            piece += '</div>';
-            resolve(piece);
-        });
-    }));
-    var newHTML = items.join("");
+    var newHTML = "";
+    for(const item of recents) {
+        var event = await getEventByID(item);
+        newHTML +=  '<div class="col-sm-2 wholeEventLITE"> ';
+        newHTML += '<p>' + event.event.name + '</p>';
+        newHTML += '</div>';
+    }
+    console.log('hey2');
     $("#recentContent").html(newHTML);
+    console.log('hey2done');
 });
 
 ipcRenderer.on('whatPage-reply', async (event, arg) => {

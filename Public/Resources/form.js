@@ -11,24 +11,24 @@ $(document).ready(() => {
     }, 1);
 
     setTimeout(async () => {
-        console.log(targetEvent);
-        var data = (await getEventByID(targetEvent, true));
-        console.log("wack");
-        data = data.event;
-        console.log(data);
-        $("#formEventName").text(data.name);
-        $("#formCustomerName").text(data.booking.account.name);
-        $("#formLocationCeremony").text("UNKNOWN");
-        $("#formLocationReception").text("UNKNOWN");
-        $("#formLocationDinner").text("UNKNOWN");
-        $("#formDate").text(data.event_date);
-        $("#formNumberOfGuards").text("UNKNOWN");
-        $("#formNumberOfCustodians").text("UNKNOWN");
-        $("#formRentalFee").text(data.rental_fee);
-        $("#formCleaningFee").text("UNKNOWN");
-        $("#formSecurityFee").text("UNKNOWN");
-        $("#formsecurityDeposit").text("UNKNOWN");
-        $("#formEventTime").text(data.name);
+        // console.log(targetEvent);
+        // var data = (await getEventByID(targetEvent, true));
+        // console.log("wack");
+        // data = data.event;
+        // console.log(data);
+        // $("#formEventName").text(data.name);
+        // $("#formCustomerName").text(data.booking.account.name);
+        // $("#formLocationCeremony").text("UNKNOWN");
+        // $("#formLocationReception").text("UNKNOWN");
+        // $("#formLocationDinner").text("UNKNOWN");
+        // $("#formDate").text(data.event_date);
+        // $("#formNumberOfGuards").text("UNKNOWN");
+        // $("#formNumberOfCustodians").text("UNKNOWN");
+        // $("#formRentalFee").text(data.rental_fee);
+        // $("#formCleaningFee").text("UNKNOWN");
+        // $("#formSecurityFee").text("UNKNOWN");
+        // $("#formsecurityDeposit").text("UNKNOWN");
+        // $("#formEventTime").text(data.name);
     }, 1);
     
     ipcRenderer.send("getLocationNotes", targetEvent);
@@ -47,8 +47,8 @@ $(document).ready(() => {
 });
 
 ipcRenderer.on("getLocNotes-reply", (event, arg) => {
-    $("#locationNotes").val(arg);
+    // $("#locationNotes").val(arg);
 });
 ipcRenderer.on("getGenNotes-reply", (event, arg) => {
-    $("#generalNotes").val(arg);
+    // $("#generalNotes").val(arg);
 });
